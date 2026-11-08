@@ -17,7 +17,9 @@ This repository contains an independent Python/PySide6 implementation of the ori
 
 ## Download and install on Windows
 
-**For non-programmers:** obtain the tested installer `SLIP_Model_Setup_v0_7.exe` from the [GitHub Releases page](https://github.com/amirshokri17/slip-model-desktop/releases) **when a release asset has been published**. The source files alone do not constitute the installer.
+**For non-programmers:** download the Windows installer `SLIP_Model_Setup_v0_7.exe` from the [v0.7.0 release](https://github.com/amirshokri17/slip-model-desktop/releases/tag/v0.7.0). The source files alone do not constitute the installer.
+
+**Check the download:** GitHub provides the installer’s SHA-256 digest on its release page. The same digest is recorded in [SHA256SUMS.txt](SHA256SUMS.txt), which corresponds to the **published GitHub release asset**, not an older local build. On Windows, run `certutil -hashfile SLIP_Model_Setup_v0_7.exe SHA256` and compare the resulting hash. For details on the MIT license verification and integrity checks, see [Release verification](docs/RELEASE_VERIFICATION.md).
 
 Once installed, the application does not require Python. The installer is currently unsigned, so Windows may report an unknown publisher. Confirm its source and checksum; do not disable antivirus or managed-device security rules.
 
