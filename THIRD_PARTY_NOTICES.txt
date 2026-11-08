@@ -1,0 +1,37 @@
+SLIP Model Desktop v0.7 — Third-party software notices
+=======================================================
+
+Application framework: Qt for Python / PySide6 (Qt 6)
+https://www.qt.io/qt-for-python
+https://doc.qt.io/qt-6/licensing.html
+
+The PySide6 package is offered under LGPLv3, GPL and commercial alternatives;
+this build uses the publicly available PySide6 distribution and Qt shared
+libraries. Users who distribute this application must satisfy the terms of
+the licenses applicable to the installed Qt/PySide6 components. In particular,
+review notices, license-text distribution, copyright requirements, and the
+ability to replace/relink LGPL-covered shared libraries. The PyInstaller
+one-folder build uses dynamic Qt DLLs for this reason.
+
+Copies of GNU LGPLv3 and GPLv3 are included as LICENSE_LGPL_3_0.txt
+and LICENSE_GPL_3_0.txt in the installed program directory.
+Official references: https://www.gnu.org/licenses/lgpl-3.0.html
+                     https://www.gnu.org/licenses/gpl-3.0.html
+PySide6 source: https://code.qt.io/cgit/pyside/pyside-setup.git/
+Qt source: https://code.qt.io/cgit/qt/
+
+Packaging: PyInstaller
+https://pyinstaller.org/
+Inno Setup installer
+https://jrsoftware.org/isinfo.php
+
+Python runtime
+https://www.python.org/
+
+These are distribution notes, not a legal opinion. Before broad or commercial
+distribution, review complete license files for the actual bundled versions.
+
+Scientific model reference:
+Montrasio, L. and Valentino, R. (2008): A model for triggering mechanisms of
+shallow landslides, Natural Hazards and Earth System Sciences, 8, 1149-1159.
+https://doi.org/10.5194/nhess-8-1149-2008
