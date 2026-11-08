@@ -37,6 +37,7 @@ Source: "dist\SLIP_Model\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdi
 Source: "reference_rainfall.csv"; DestDir: "{app}\Examples"; Flags: ignoreversion
 Source: "COLLEAGUE_INSTALL_README.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "THIRD_PARTY_NOTICES.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "LICENSE"; DestDir: "{app}"; Flags: ignoreversion
 Source: "LICENSE_LGPL_3_0.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "LICENSE_GPL_3_0.txt"; DestDir: "{app}"; Flags: ignoreversion
 
