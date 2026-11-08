@@ -1,58 +1,38 @@
 SLIP MODEL DESKTOP v0.7 — WINDOWS INSTALLER BUILD KIT
 ====================================================
 
-This kit was prepared from the user's uploaded slip_model.zip.
-It contains only the ORIGINAL v0.7 sources: no sprinkler extension.
-The original Python model/geometry/sensitivity calculations were not changed.
-The original virtual environment (.venv, ~248 MB in upload) was excluded.
+This build uses the ORIGINAL v0.7 SLIP engine, without the experimental
+sprinkler-geometry extension. Source calculations are not modified.
 
-ONE-TIME PREPARATION — ON YOUR WINDOWS 10/11 64-BIT COMPUTER
+REQUIREMENTS ON THE BUILD COMPUTER
+- Windows 10 or 11, 64-bit
+- Python 3.15, available via: py -3.15 --version
+- Inno Setup 6: https://jrsoftware.org/isinfo.php
+- Internet connection for downloading Python packages
 
-A. Make sure Python 3.15 is installed. You already used Python 3.15.2.
-   Command to verify: py -3.15 --version
+IMPORTANT: USE A SHORT BUILD DIRECTORY
+Extract this project directly to C:\SLIPBuild rather than a long Desktop path.
+PySide6 may install files with very long nested names; Windows may reject those
+paths when the build folder is deeply nested.
 
-B. Install Inno Setup 6 on the BUILD computer (not on colleagues' PCs):
-   https://jrsoftware.org/isinfo.php
-   Or: winget install --id JRSoftware.InnoSetup -e -s winget -i
+RUN THE BUILD
+1. Open Command Prompt in C:\SLIPBuild.
+2. Run BUILD_WINDOWS_INSTALLER.bat.
+3. The script builds .buildenv and runs the regression tests, then PyInstaller.
+4. Inno Setup compiles SLIP_Model_Installer.iss to:
+       installer\SLIP_Model_Setup_v0_7.exe
+5. If the script reports missing Inno Setup or fails, no final installer exists.
+   Look for the first ERROR message; a PyInstaller dist folder is not an installer.
+6. The installer is unsigned and can trigger Windows publisher warnings.
 
-C. Extract this entire kit somewhere, for example:
-   C:\Users\<username>\Desktop\SLIP_Model_Desktop_v0_7_Windows_Build
+VERIFY ON A SEPARATE WINDOWS PC
+- Install through the setup wizard (Python not required on target PC).
+- Launch from the Start menu and optional desktop shortcut.
+- Check reference-model baseline FS at 40 min (approximately 1.64178).
+- Test the numerical scenario documented in docs/NUMERICAL_EXAMPLE.md.
+- Test CSV import, sensitivity analysis, both PNG exports and uninstall.
 
-D. Double-click BUILD_WINDOWS_INSTALLER.bat, or run it in CMD.
-   It creates an isolated .buildenv; installs PySide6 and PyInstaller;
-   runs the unit/UI tests in Qt offscreen mode; builds dist\SLIP_Model\;
-   then uses Inno Setup to create the installer.
-
-E. Expected installer location after SUCCESS:
-   installer\SLIP_Model_Setup_v0_7.exe
-
-F. Install the resulting setup EXE on a SEPARATE Windows computer.
-   Verify launch, baseline FS(40 min), CSV import, both graph exports,
-   sensitivity analysis, Start-menu shortcut and uninstall.
-
-G. Share ONLY installer\SLIP_Model_Setup_v0_7.exe with your colleagues.
-   They do NOT need Python, Inno Setup or these source files.
-
-IF INNO SETUP IS NOT FOUND
-The EXE folder dist\SLIP_Model\ is still produced. Install Inno Setup and
-rerun the batch script, or compile SLIP_Model_Installer.iss in Inno Setup.
-
-IF BUILD FAILS
-- Read the first ERROR printed by the command window.
-- Check 64-bit Python with py -3.15 --version.
-- Run pip install in an unrestricted network environment to fetch packages.
-- Re-run the build script. It does not change original model source files.
-
-IMPORTANT NOTES
-- The setup is intentionally per-user. It avoids requiring administrator
-  permissions; installation goes to the user's local Programs directory.
-- This setup is UNSIGNED; Windows may show an unknown-publisher warning.
-  Do not claim it is signed or bypass enterprise policy restrictions.
-- Qt/PySide6 redistribution has LGPL/commercial licensing obligations.
-  Review THIRD_PARTY_NOTICES.txt before distribution.
-- PyInstaller is not a Windows cross-compiler. The final .exe and setup
-  must be built on a Windows machine. A Windows installer was NOT built here.
-- Avoid changing SLIP_Model_Installer.iss AppId between rebuilds if you want
-  Windows upgrades/uninstalls to recognize the same application.
-
-DO NOT distribute the original ZIP's .venv folder to colleagues.
+DISTRIBUTION
+- Upload the final installer to GitHub Releases with its SHA-256 checksum.
+- Do not upload .venv, .buildenv, dist, build, or private laboratory files.
+- See THIRD_PARTY_NOTICES.txt for PySide6/Qt redistribution requirements.

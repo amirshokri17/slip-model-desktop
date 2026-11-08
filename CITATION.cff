@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite this implementation and the Montrasio–Valentino (2008) original model."
+type: software
+title: "SLIP Model Desktop"
+authors:
+  - family-names: "Shokri"
+    given-names: "Amir"
+version: "0.7.0"
+repository-code: "https://github.com/amirshokri17/slip-model-desktop"
+url: "https://github.com/amirshokri17/slip-model-desktop"
+abstract: "Independent Python/PySide6 desktop implementation of the Montrasio–Valentino (2008) SLIP numerical shallow-landslide stability model."

@@ -73,7 +73,7 @@ if not defined ISCC (
     echo Then rerun BUILD_WINDOWS_INSTALLER.bat or compile SLIP_Model_Installer.iss manually.
     echo.
     echo Do not send the single EXE from the one-folder build without its _internal folder.
-    exit /b 0
+    exit /b 2
 )
 
 "%ISCC%" "SLIP_Model_Installer.iss"
